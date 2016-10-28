@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container>
+  <Name>plex</Name>
+  <Description>Plex organizes video, music and photos from personal media libraries and streams them to smart TVs, streaming boxes and mobile devices.</Description>
+  <Registry>https://hub.docker.com/r/linuxserver/plex/</Registry>
+  <Repository>linuxserver/plex</Repository>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+    <Variable>
+      <Name>PUID</Name>
+      <Value>99</Value>
+    </Variable>
+    <Variable>
+      <Name>PGID</Name>
+      <Value>100</Value>
+    </Variable>
+    <Variable>
+      <Name>VERSION</Name>
+      <Value>latest</Value>
+    </Variable>
+  </Environment>
+  <Networking>
+    <Mode>host</Mode>
+    <Publish/>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/media/</HostDir>
+      <ContainerDir>/media</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/plex/config/</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Version>0.0.1</Version>
+  <WebUI>http://[IP]:[PORT:32400]/web</WebUI>
+  <Banner>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-banner.png</Banner>
+  <Icon>https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/plex-icon.png</Icon>
+  <ExtraParams></ExtraParams>
+</Container>

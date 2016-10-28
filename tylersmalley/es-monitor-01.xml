@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Containers>
+  <Date>2016-10-28</Date>
+  <Version>5.0.0</Version>
+  <Beta>False</Beta>
+  <Category></Category>
+  <Name>es-monitor-01</Name>
+  <Project>https://www.elastic.co/products/elasticsearch</Project>
+  <Changes></Changes>
+  <Overview></Overview>
+  <Description></Description>
+  <Registry>http://docker.elastic.co/elasticsearch/elasticsearch</Registry>
+  <GitHub>https://github.com/tylersmalley/unraid-docker-templates</GitHub>
+  <Repository>docker.elastic.co/elasticsearch/elasticsearch</Repository>
+  <Support></Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>9202</HostPort>
+        <ContainerPort>9200</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Environment></Environment>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elasticsearch/es-monitor-01/data</HostDir>
+      <ContainerDir>/usr/share/elasticsearch/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/elasticsearch/es-monitor-01/config</HostDir>
+      <ContainerDir>/usr/share/elasticsearch/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:9200]</WebUI>
+  <Banner></Banner>
+  <Icon>https://www.elastic.co/static/images/elastic-logo-200.png</Icon>
+  <ExtraParams>--ulimit nofile=262144:262144</ExtraParams>
+</Containers>
